@@ -40,3 +40,7 @@ public class EvenOddDigitSum {
         System.out.println("Sum of Odd Digits = " + oddSum.findSum(num));
     }
 }
+output:
+Enter a number: 123456
+Sum of Even Digits = 12
+Sum of Odd Digits = 9
