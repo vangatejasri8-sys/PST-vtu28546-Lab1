@@ -12,21 +12,23 @@ public class Solution {
             for (int i = 0; i < n; i++)
                 a[i] = sc.nextInt();
 
-            int current = a[0], best = a[0];
-            int nonContiguous = 0, largest = a[0];
+            int current = a[0];
+            int best = a[0];
+            int sum = 0, largest = a[0];
 
-            for (int x : a) {
-                current = Math.max(x, current + x);
+            for (int i = 0; i < n; i++) {
+                current = Math.max(a[i], current + a[i]);
                 best = Math.max(best, current);
-                largest = Math.max(largest, x);
-                if (x > 0)
-                    nonContiguous += x;
+                largest = Math.max(largest, a[i]);
+
+                if (a[i] > 0)
+                    sum += a[i];
             }
 
-            if (nonContiguous == 0)
-                nonContiguous = largest;
+            if (sum == 0)
+                sum = largest;
 
-            System.out.println(best + " " + nonContiguous);
+            System.out.println(best + " " + sum);
         }
     }
 }
